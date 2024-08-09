@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Information</title>
+    <style>
+        .display{
+            margin-top: 5%;
+            margin-left: 3%;
+        }
+        .show{
+            font-size: 2rem;
+            display: flex;
+            padding: 10px;
+            
+        }
+        .data{
+            margin-left:4%;
+            color: green;  
+        }
+        header{
+            margin-top: 30px;
+            font-size: 3rem;
+            text-align: center;
+            color: red;
+            text-shadow:yellowgreen;
+        }
+        .delete-btn{
+            padding: 10px;
+            color: white;
+            background-color: rgb(34, 32, 32);
+             position: relative;
+             right:-80%;
+             margin-top: 10%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+      User Information  
+    </header>
+    <div class="display">
+        
+    </div>
+    <button class="delete-btn" onclick="deleteData();">Delete Account</button>
+    <script src="item.js"></script>
+    <script src="index.js"></script>
+    
+    <script>
+       display();
+       
+    </script>
+</body>
+</html>

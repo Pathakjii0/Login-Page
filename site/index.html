@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+ 
+    <style>
+        header {
+            text-align: center;
+            border: 2px solid black;
+            color: red;
+            background-color: rgb(130, 130, 238);
+            margin-top: -20px;
+            margin-bottom: 0px;
+        }
+        #h1 {
+            font-size: 40px;
+            text-align: center;
+            color: blue;
+            height: 30px;
+            margin-top: 100px;
+            margin-bottom: 60px;
+        }
+        body {
+            background-color: aqua;
+            font-weight: bolder;
+            
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size:2rem;
+        }
+        .dec {
+            margin: 15px;
+            padding:5px;
+            border: none;
+        }
+        .btn{
+            background-color: rgb(156, 130, 181);
+            border-radius: 0cqi;
+            border-color: red;
+            padding: 10px 50px;
+            margin: 30px;
+            cursor: pointer;
+        }
+        a {
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            color: rgb(235, 18, 18);
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><big>LOGIN PAGE</big></h1>
+        <hr>
+    </header>
+    
+    <main>
+        <section>
+            <h1 id="h1">Enter Your Details</h1>
+            <form class="content">
+                <input type="email" placeholder="Email" size="30px" class="dec" id="user-email" required>
+                <input type="password" placeholder="Password" size="30px" class="dec" id="user-pass" required>
+                <a href="forget.html" class="dec">forget password ?</a>
+                <button type="button" class="btn" onclick="login();">Login</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>Not a member? <a href="signup.html">signup</a></p>
+    </footer>
+
+    <script src="item.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

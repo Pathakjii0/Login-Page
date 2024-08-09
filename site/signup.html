@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+        h1{
+            text-align: center;
+            color: blue;
+
+        }
+        .form{
+            display: flex;
+          flex-direction: column;
+          margin-left: 30px;
+          margin-top: 8%;
+        }
+        .label-text{
+            font-size: 2rem;
+            margin: 5px;
+            margin-right: 10px;
+        }
+        .input{
+            margin-left: 30px;
+            font-size: 1rem;
+            color:rgb(225, 130, 13);
+            border: none;
+            border-radius: 8px;
+            padding: 10px;
+        }
+        .radio{
+            font-size: 1rem;
+            color: red;
+            cursor: pointer;
+        }
+        .submit{
+            align-self: center;
+            height: 40px;
+            width: 100px;
+            font-size: 1rem;
+            font-weight: bolder;
+            color: red;
+            background: rgb(171, 237, 171);
+            border: 1px solid black;
+            border-radius: 7px;
+            margin-top: 3vh;
+            cursor: pointer;
+        }
+     .back{
+          align-self: left;
+            border-radius: 5px;
+            border: none;
+            height: 40px;
+            width: 170px;
+            font-size: 1rem;
+            font-weight: bolder;
+            color: red;
+            background: rgb(204, 200, 197);
+            /* border: 1px solid black; */
+            border-radius: 7px;
+            cursor: pointer;
+            
+     }
+    </style>
+</head>
+<body>
+    <header>
+              <a href="index.html"><button class="back">Back to Login Page</button></a>
+              <h1>Signup Page</h1>
+    </header>
+    <main>
+        <section>
+            <form action="#" class="form">
+            <label for="name"class="label-text">Name
+                <input type="text" class="input" placeholder="Enter Your Name" id="name">
+            </label>
+            
+            <label for=" mobile" class="label-text">Mobile No.
+                <input type="tel" class="input" placeholder="Enter your Mobile no." id="mobile">
+            </label>
+
+            <label for="email" class="label-text">Email
+                <input type="email" class="input" placeholder="Enter Your Email" id="email">
+            </label>
+
+            <label for="gender" class="label-text">Gender
+                 <input type="radio" class="radio" name="gender" class="gender" value="Male">Male
+                 <input type="radio" class="radio" name="gender" class="gender" value="Female">Female
+                 <input type="radio" class="radio" name="gender" class="gender" value="Other">Other
+            </label>
+
+            <label for="college" class="label-text">College
+                <input type="text" class="input" placeholder="Enter Your college name" id="college">
+            </label>
+
+            <label for="course" class="label-text">Course
+                <select name="course" class="input" id="course">
+                   <option value="bca">BCA</option>
+                   <option value="btek">B.Tek</option>
+                   <option value="nursing">Nursing</option>
+                   <option value="poly">Polytechnic</option>
+                   <option value="bpharm">B.Pharam</option>
+                </select>
+           </label>
+
+            <label for="year" class="label-text">Year
+                <select name="yearly" class="input" id="year">
+                    <option>1st year</option>
+                    <option>2nd year</option>
+                    <option>3rd year</option>
+                    <option>4th year</option>
+                 </select>
+            </label>
+            <label for="pass" class="label-text">Password
+                <input type="password" class="input" id="pass"  placeholder="Provide Password">
+            </label>
+            <button class="submit">Submit</button>
+            
+        </form>
+        
+        
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="item.js"></script>
+    <script>
+        let button=document.querySelector('.submit');
+        button.addEventListener("click",store);
+        
+        let temp={
+            name:'ankur',
+            mobile:9648587003,
+            email:'pathakankur457@gmail.com',
+            gender:'',
+            college:'future',
+            course:'bca',
+            year:"1",
+            pass:"",
+        };
+    function store(){
+         temp.name=document.querySelector('#name').value;
+        temp.mobile=document.querySelector('#mobile').value;
+        temp.email=document.querySelector('#email').value;
+    
+        document.getElementsByName('gender').forEach(radio=>{
+            if(radio.checked){
+                temp.gender=radio.value;
+            }
+        });
+
+        temp.college=document.querySelector('#college').value;
+        temp.pass=document.querySelector('#pass').value;
+        temp.course=document.querySelector('#course').value;
+        temp.year=document.querySelector('#year').value;
+           
+    
+    items.push(temp);
+    console.log(items);
+    localStorage.setItem('userdata',JSON.stringify(items));
+    
+    }
+    </script>
+</body>
+</html>

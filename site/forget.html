@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FORGET PASSWORD</title>
+  <style>
+    header {
+      text-align: center;
+      color: red;
+      font-size: x-large;
+      background-color:rgb(56, 133, 148);
+    }
+    h2 {
+        color: darkblue;
+        font-weight: bolder;
+        font-size: xx-large;
+      }
+    body {
+      background-color: rgb(108, 108, 232);
+    }
+    .c{
+      display: flex;
+      justify-content: center;
+      margin-top: 100px;
+    }
+    .content{
+      width: 400px;
+      height: 300px;
+       text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: rgb(170, 149, 149);
+      h2{
+        position: relative;
+        top: -50px;
+      }
+    }
+    button {
+      background-color: brown;
+      border: red;
+      font-size: large;
+      width: 200px;
+      height: 40px;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      bottom: -40px;
+      align-self: center;
+    }
+    .input{
+      font-size: 1rem;
+      border: none;
+      margin: 10px;
+      padding: 12px;
+      width: 70%;
+      color: green;
+      margin-left: 10%;
+    }
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Reset Password Form</h1><br>
+  </header>
+  <main>
+    <section>
+      <div class="c">
+         <div class="content">
+          <h2>Forget Password</h2>
+        <input type="email" id="email" class="input" placeholder="Enter Your Email" size="30pxl" id="forgetemail" class="input">
+         <input type="text" placeholder="Enter your new Password" class="input" id="pass">
+         
+        <button onclick="forget();">Reset My Password</button></div>
+      </div></div>
+    </section>
+  </main>
+  <script src="item.js"></script>
+  <script>
+ function forget(){
+  let useremail=document.querySelector('#email').value;
+  let userpass=document.querySelector('#pass').value;
+  let bool=false;
+  for(let i=0;i< items.length;i++){
+    if(useremail==items[i].email){
+      items[i].pass=userpass;
+      localStorage.setItem('userdata',JSON.stringify(items));
+      bool=true;
+      break;
+    }
+  }
+  if(bool){
+  alert('Your Password for This Account is Reset');}
+  else {
+    alert(`Invalid email or Your Account is not find
+    
+    Please Try another time`);
+  }
+ }
+  </script>
+</body>
+
+</html>
